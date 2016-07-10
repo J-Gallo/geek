@@ -1,0 +1,236 @@
+// Search
+form {
+    display: inline-block;
+    width: 40%;
+    text-align: right;
+    vertical-align: top;
+    margin-top: 8px;
+    .form-search {
+      margin-left: 0;
+      margin-right: 0;
+      font-size: 0;
+      margin-top: 10px;
+      text-align: center;
+      .search-box, .form-control{
+        width: 77%;
+        display: inline-block;
+        border-radius: 2px 0 0 2px;
+        height: 40px;
+      }
+      .submit-button {
+        width: 110px;
+        display: inline-block;
+        border: none;
+        height: 40px;
+        border-radius: 0 2px 2px 0;
+        background-color: $gray-darkest;
+        color: $white;
+        font-size: 14px;
+      }
+    }
+}
+.geek-search {
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    color: $gray-main;
+    font-size: 14px;
+
+    // Cerrar mobile
+    .geek-search-close-mobile {
+        font-size: 35px;
+        color: $gray-main;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        display: none;
+        text-decoration: none;
+    }
+
+    // Input
+    .geek-search-input {
+        @include border-radius(2px);
+        @include box-sizing(border-box);
+        display: block;
+        width: 100%;
+        height: 40px;
+        padding: 7px 120px 7px 10px;
+        font-size: 14;
+        border: 0;
+        color: $gray-main;
+        background-color: $white;
+        outline: none;
+
+        &::-webkit-input-placeholder{
+            color: gray;
+        }
+
+        &::-moz-placeholder{
+            color: gray;
+        }
+
+        &:-ms-input-placeholder{
+            color: gray;
+        }
+    }
+
+    // Button
+    .geek-search-button {
+        @include border-radius(0 2px 2px 0);
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 40px;
+        background-color: $blue-darkest;
+        color: $white;
+        font-size: 15px;
+        width: 110px;
+        white-space: nowrap;
+        overflow: hidden;
+        display: block;
+        border: 0;
+        cursor: pointer;
+        text-align: center;
+        padding: 0;
+    }
+
+    // Busqueda avanzada
+    .geek-search-advanced {
+        position: absolute;
+        right: 110px;
+        top: 0;
+        background-color: $white;
+        height: 40px;
+        padding: 10px;
+
+        input {
+            margin: 5px 2px 0 0;
+            text-align: right;
+        }
+    }
+
+    &.geek--expanded {
+        .geek-search-dropdown {
+            @include opacity(1);
+            visibility: visible;
+            top: 38px;
+            text-align: left;
+        }
+    }
+
+    // Dropdown
+    .geek-search-dropdown {
+        @include box-shadow(0 2px 2px rgba($silver, 0.8));
+        @include transition(opacity 0.2s ease-out, top 0.2s ease-out, visibility 0.2s ease-out);
+        display: block;
+        padding: 5px;
+        border: 1px solid gray;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: $white;
+        max-height: 600px;
+
+        @include opacity(0);
+        visibility: hidden;
+        top: 28px;
+
+        // Loading
+        .geek-search-dropdown-loading {
+            display: block;
+            margin: 5px auto;
+            padding: 5px;
+        }
+
+        .geek-hide {
+            display: none;
+        }
+
+        .geek-show {
+            display: block;
+        }
+
+        // Listado
+        .geek-search-dropdown-list {
+            border-top: 1px solid gray;
+
+            &:first-of-type {
+                border-top: none;
+            }
+
+            li {
+                @include border-radius(2px);
+                @include ellipsis-inline;
+                cursor: pointer;
+                display: block;
+                color: blue;
+                position: relative;
+                text-decoration: none;
+
+                &:first-child {
+                    .geek-search-dropdown-list-category {
+                        display: block;
+                    }
+                }
+
+                &:last-child {
+                    &.geek--with-img {
+                        a {
+                            padding-left: 6px;
+                        }
+                    }
+
+                    img {
+                        display: none;
+                    }
+                }
+
+                &.current {
+                    background-color: gray;
+                    text-decoration: none;
+
+                    .geek-search-dropdown-list-category {
+                        background-color: gray;
+                    }
+                }
+
+                // Con imagen
+                &.geek--with-img {
+                    a {
+                        padding-left: 40px;
+                        text-decoration: none;
+                    }
+                }
+
+                a {
+                    display: block;
+                    padding: 6px;
+                    line-height: 20px;
+                    text-decoration: none;
+                }
+
+                // Categoria
+                .geek-search-dropdown-list-category {
+                    position: absolute;
+                    padding: 5px;
+                    background-color: $white;
+                    font-size: 11px;
+                    color: blue;
+                    top: 0;
+                    right: 0;
+                    display: none;
+                }
+
+                // Imagen
+                .geek-search-dropdown-list-img {
+                    width: 32px;
+                    height: 32px;
+                    position: absolute;
+                    left: 2px;
+                    top: 0;
+                }
+            }
+        }
+    }
+
+}

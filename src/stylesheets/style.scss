@@ -1,0 +1,31 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+@import "variables";
+@import "modules/mixins/css3";
+@import "modules/mixins/clearfix";
+@import "modules/mixins/ellipsis-inline";
+@import "modules/mixins/ellipsis-block";
+@import "modules/mixins/popover";
+@import "modules/mixins/rem";
+@import "modules/mixins/screen-size";
+@import "modules/mixins/scrollbar";
+@import "modules/mixins/tooltip";
+@import "modules/mixins/transitions";
+@import "modules/mixins/typo";
+@import "modules/header/header";
+@import "modules/carousel/carousel";
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: $gray-lightest;
+    .geek-container {
+        width: 70%;
+        margin: 130px auto;
+        background-color: $gray-lightest;
+    }
+}
+
+.swiper-container {
+    width: 100%;
+    height: 300px;
+}

@@ -1,0 +1,70 @@
+.geek-carousel{
+    background-color: $white;
+    border: 1px solid $gray-light;
+    margin-bottom: 10px;
+    h3 {
+        margin: 0;
+        padding: 20px 0 10px 50px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+    hr {
+        color: $silver-light;
+        background-color: $silver-light;
+        border: 0;
+        height: 1px;
+        width: 92%;
+    }
+    .geek-carousel-container {
+        width: 100%;
+        height: 160px;
+        position: relative;
+        overflow: hidden;
+        background-color: $white;
+        margin: 15px 0 15px 0;
+        .geek-button-control {
+            @include opacity(0);
+            @include transition(box-shadow 0.2s ease-out, opacity 0.2s ease-out, left 0.2s ease-out, right 0.2s ease-out, visibility 0.2s ease-out);
+            @include border-radius(0 3px 3px 0);
+            position: absolute;
+            visibility: hidden;
+            background-color: $gray-main;
+            color: $white;
+            font-size: 26px;
+            z-index: 2;
+            height: 80px;
+            text-align: center;
+            width: 40px;
+            top: 50%;
+            margin-top: -40px;
+            cursor: pointer;
+            span {
+                position: absolute;
+                text-align: center;
+                line-height: 36px;
+                top: 50%;
+                left: 50%;
+                margin-left: -7px;
+                margin-top: -18px;
+            }
+        }
+        .geek-button-control:hover {
+            background-color: $gray-main - #222;
+        }
+        .geek-button-next {
+            right: 0;
+        }
+        .swiper-slide {
+            margin: 10px;
+            margin-left: 50px;
+            border: 1px solid $black;
+            width: 200px;
+            height: auto;
+        }
+    }
+
+    .geek-carousel-container:hover .geek-button-control {
+        @include opacity(1);
+        visibility: visible;
+    }
+}

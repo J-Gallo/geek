@@ -1,0 +1,89 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: $gray-main;
+    text-align: center;
+    z-index: 999;
+    .geek-logo {
+        display: inline-block;
+        padding: 0 7px 0;
+        height: 100%;
+        margin-right: 40px;
+        img {
+          height: 70px;
+          vertical-align: middle;
+        }
+        span {
+            color: #79c142;
+            text-transform: uppercase;
+            vertical-align: -webkit-baseline-middle;
+            vertical-align: -moz-middle-with-baseline;
+            margin-left: 15px;
+        }
+    }
+    .geek-account {
+        vertical-align: -webkit-baseline-middle;
+        vertical-align: -moz-middle-with-baseline;
+        display: inline-block;
+        color: $white;
+        margin-left: 40px;
+        font-size: 12px;
+        text-transform: uppercase;
+        .geek-login {
+            padding-right: 20px;
+            border-right: 1px solid $black;
+            display: inline-block;
+        }
+        .geek-account-actions {
+            display: inline-block;
+            font-size: 26px;
+            vertical-align: text-bottom;
+            margin-left: 10px;
+            i {
+                margin-right: 10px;
+            }
+        }
+        p {
+            margin: 0;
+            padding: 0;
+            text-align: right;
+        }
+    }
+}
+
+nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 46px;
+    background: -moz-linear-gradient(top,  $white 0%, $gray-light 100%);
+    background: -webkit-linear-gradient(top,  $white 0%,$gray-light 100%);
+    background: linear-gradient(to bottom,  $white 0%,$gray-light 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF', endColorstr='#E2E2E2',GradientType=0 );
+    box-shadow: 0 0 15px $gray-dark;
+    text-align: center;
+    font-size: 15px;
+    z-index: 1000;
+    ul {
+        height: 100%;
+        list-style: none;
+        margin: 0 auto;
+        display: table;
+        li {
+            vertical-align: middle;
+            display: table-cell;
+            padding: 0 10px 0 10px;
+            height: 100%;
+            color: $gray-main;
+            text-transform: uppercase;
+        }
+        li:hover {
+            background: $gray-darkest - #111;
+            color: $gray-lightest;
+        }
+    }
+}
