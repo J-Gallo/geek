@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
 var productListSchema = new Schema({
     entityId: {type: String},
     name: {type: String},
-    products: []
+    products: [{type: mongoose.Schema.Types.ObjectId, ref: 'Product'}]
 });
 
-module.exports = mongoose.mode('productList', productListSchema);
+module.exports = mongoose.model('productList', productListSchema);
