@@ -59,7 +59,11 @@
             margin-left: 50px;
             border: 1px solid $black;
             width: 200px;
-            height: auto;
+            height: 140px;
+            img {
+                width: 200px;
+                height: 140px;
+            }
         }
     }
 

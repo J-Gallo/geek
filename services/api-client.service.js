@@ -5,7 +5,7 @@ var self = {},
     Banner = mongoose.model('banner'),
     Category = mongoose.model('category'),
     Product = mongoose.model('product'),
-    ProductList = mongoose.model('productList');
+    Productlist = mongoose.model('productlist');
 
 /**
  * @name insertBanner
@@ -27,7 +27,25 @@ self.insertBanner = (req, res) => {
     })
 };
 
+/**
+ * @name insertProductList
+ * @description Insert productList to mongo
+ */
+self.insertProductList = (req, res) => {
+    var newProductList = new Productlist({
+        entityId: req.body.entityId,
+        name: req.body.name,
+        products: req.body.products
+    });
 
+    newProductList.save(function (err, npl) {
+        if (err) {
+            return res.status(500).send(err.message);
+        } else {
+            res.status(200).jsonp(npl);
+        }
+    })
+};
 
 /**
  * @name insertProduct
@@ -96,6 +114,18 @@ self.getProduct = (req, res) => {
             console.log(product);
             res.send(product);
         })
+};
+
+self.getProductList = (req, res, id) => {
+    var deferred = Q.defer();
+    Productlist.findOne({entityId: id})
+        .populate('products')
+        .exec(function(err, productList) {
+            deferred.resolve(productList);
+        })
+    
+
+    return deferred.promise;
 };
 
 module.exports = self;
