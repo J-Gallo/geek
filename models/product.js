@@ -5,6 +5,7 @@ var mongoose = require('mongoose'),
 var productSchema = new Schema({
     entityId: {type: String},
     name: {type: String},
+    urlName: {type: String},
     price: {type: Number},
     description: {type: String},
     category: {type: Schema.Types.ObjectId, ref: 'category'},

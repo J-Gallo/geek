@@ -64,6 +64,39 @@
                 width: 200px;
                 height: 140px;
             }
+            &:hover {
+                .geek-product-data, .geek-product-data-text {
+                    visibility: visible;
+                }
+            }
+            .geek-product-data {
+                width: 200px;
+                height: 140px;
+                color: $white;
+                position: absolute;
+                top: 0;
+                left: 0;
+                visibility: hidden;
+                opacity: 0.5;
+                background-color: $black;
+                cursor: pointer;
+            }
+            .geek-product-data-text {
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                visibility: hidden;
+                color: $white;
+                text-align: center;
+                top: 50px;
+                cursor: pointer;
+                p {
+                    margin: 0;
+                    padding: 0;
+                    font-size: 14px;
+                }
+            }
         }
     }
 

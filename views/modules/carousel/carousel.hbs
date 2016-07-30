@@ -6,9 +6,16 @@
         <div class="geek-button-control geek-button-next"><span><i class="fa fa-caret-right" aria-hidden="true"></i></span></div>
         <div class="swiper-wrapper">
             {{#each productLists.products}}
-                <div class="swiper-slide">
-                    <img src="{{this.images}}" alt="{{this.name}}" />
-                </div>
+                <a href="/{{this.urlName}}/{{this.entityId}}">
+                    <div class="swiper-slide">
+                        <img src="{{this.images}}" alt="{{this.name}}" />
+                        <div class="geek-product-data">
+                        </div>
+                        <div class="geek-product-data-text">
+                            <p>{{this.name}}</p>
+                        </div>
+                    </div>
+                </a>
             {{/each}}
         </div>
     </div>

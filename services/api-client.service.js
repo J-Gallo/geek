@@ -55,6 +55,7 @@ self.insertProduct = (req, res) => {
     var newProduct = new Product({
         entityId: req.body.entityId,
         name: req.body.name,
+        urlName: req.body.urlName,
         price: req.body.price,
         description: req.body.description,
         category: req.body.category,
@@ -123,7 +124,7 @@ self.getProductList = (req, res, id) => {
         .exec(function(err, productList) {
             deferred.resolve(productList);
         })
-    
+
 
     return deferred.promise;
 };
